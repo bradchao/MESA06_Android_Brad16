@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initWebView(){
-        WebViewClient client = new WebViewClient();
+        MyWebViewClient client = new MyWebViewClient();
         webView.setWebViewClient(client);
 
         // 1.
@@ -27,4 +27,8 @@ public class MainActivity extends AppCompatActivity {
         // 3.
         //webView.loadData("<h1>Brad Company</h1>","text/html;charset=utf-8",null);
     }
+
+    private class MyWebViewClient extends WebViewClient {
+    }
+
 }
