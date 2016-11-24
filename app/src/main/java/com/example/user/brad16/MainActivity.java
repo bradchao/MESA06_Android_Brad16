@@ -2,6 +2,7 @@ package com.example.user.brad16;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -33,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class MyWebViewClient extends WebViewClient {
+    }
+
+    public void test1(View v){
+        String name = "Eric";
+        webView.loadUrl("javascript:test1('" + name + "')");
     }
 
 }
