@@ -2,7 +2,9 @@ package com.example.user.brad16;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
 
+        webView.addJavascriptInterface(new BradJS(), "brad");
+
         // 1.
         //webView.loadUrl("http://www.iii.org.tw");
         // 2 .
@@ -39,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
     public void test1(View v){
         String name = "Eric";
         webView.loadUrl("javascript:test1('" + name + "')");
+    }
+
+    private class BradJS {
+        @JavascriptInterface
+        public void showUrName(){
+            Log.v("brad", "OK");
+        }
     }
 
 }
