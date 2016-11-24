@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
     private class BradJS {
         @JavascriptInterface
-        public void showUrName(){
-            Log.v("brad", "OK");
+        public void showUrName(String myname){
+            Log.v("brad", "OK: " + myname);
         }
     }
 
